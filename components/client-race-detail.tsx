@@ -10,7 +10,7 @@ import { Button } from './ui/button'
 // Dummy data (ersätt med props eller fetch senare)
 const mockResellers: LoppResellerCardProps[] = [
   {
-    name: 'Go Sport Travel',
+    name: 'Arrangör 1',
     logo: '/gosport.svg',
     price: 2995,
     description:
@@ -20,7 +20,7 @@ const mockResellers: LoppResellerCardProps[] = [
     filter: 'all',
   },
   {
-    name: 'Here We Go',
+    name: 'Arrangör 2',
     logo: '/herewego.svg',
     price: 4640,
     included: ['Matchbiljett ingår'],
@@ -28,7 +28,7 @@ const mockResellers: LoppResellerCardProps[] = [
     filter: 'all',
   },
   {
-    name: 'Here We Go',
+    name: 'Arrangör 3',
     logo: '/herewego.svg',
     price: 6240,
     included: ['Matchbiljett ingår', '2 hotellnätter ingår'],
@@ -37,7 +37,7 @@ const mockResellers: LoppResellerCardProps[] = [
     filter: 'all',
   },
   {
-    name: 'BE Resor',
+    name: 'Arrangör 4',
     logo: '/beresor.svg',
     price: 9915,
     included: ['Matchbiljett ingår'],

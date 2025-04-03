@@ -2,6 +2,8 @@
 
 import Image from 'next/image'
 import { ArrowRight, Info, Ticket, Hotel, Plane } from 'lucide-react'
+import { Button } from './ui/button'
+import { LoppButton } from '@/app/(main)/lopp/_components/lopp-button'
 
 // Props utan filter, det kommer från föräldern
 export type LoppResellerCardProps = {
@@ -52,44 +54,17 @@ export default function LoppResellerCard({
 
       {/* Höger: Priser beroende på filter */}
       <div className="flex flex-col sm:items-end items-start mt-4 sm:mt-0 gap-2 w-full sm:w-auto">
-        <span className="text-xs text-[hsl(var(--muted-foreground))] mb-1">
-          Läs mer / Boka
-        </span>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 w-full">
+        <div className="grid grid-cols-1 md:grid-cols- gap-2 w-full">
           {(filter === 'all' || filter === 'ticket') && (
-            <button className="flex items-center justify-between gap-2 text-sm font-medium px-3 py-2 rounded-lg bg-white border border-[hsl(var(--border))] shadow-sm hover:bg-white/80 transition text-[hsl(var(--foreground))] w-full">
-              <span className="flex items-center gap-1">
-                <Ticket className="w-4 h-4 text-[hsl(var(--primary))]" />{' '}
-                Biljett
-              </span>
-              <span className="flex items-center gap-1 text-[hsl(var(--primary))] font-semibold">
-                {price.toLocaleString()} kr <ArrowRight className="w-4 h-4" />
-              </span>
-            </button>
+            <LoppButton price={price} showHotel={false} showPlane={false} />
           )}
+
           {(filter === 'all' || filter === 'hotel') && (
-            <button className="flex items-center justify-between gap-2 text-sm font-medium px-3 py-2 rounded-lg bg-white border border-[hsl(var(--border))] shadow-sm hover:bg-white/80 transition text-[hsl(var(--foreground))] w-full">
-              <span className="flex items-center gap-1">
-                <Ticket className="w-4 h-4 text-[hsl(var(--primary))]" />
-                <Hotel className="w-4 h-4 text-[hsl(var(--primary))]" /> +
-                Hotell
-              </span>
-              <span className="flex items-center gap-1 text-[hsl(var(--primary))] font-semibold">
-                {price.toLocaleString()} kr <ArrowRight className="w-4 h-4" />
-              </span>
-            </button>
+            <LoppButton price={price} showHotel={true} showPlane={false} />
           )}
+
           {(filter === 'all' || filter === 'full') && (
-            <button className="flex items-center justify-between gap-2 text-sm font-medium px-3 py-2 rounded-lg bg-white border border-[hsl(var(--border))] shadow-sm hover:bg-white/80 transition text-[hsl(var(--foreground))] w-full">
-              <span className="flex items-center gap-1">
-                <Ticket className="w-4 h-4 text-[hsl(var(--primary))]" />
-                <Hotel className="w-4 h-4 text-[hsl(var(--primary))]" />
-                <Plane className="w-4 h-4 text-[hsl(var(--primary))]" /> + Flyg
-              </span>
-              <span className="flex items-center gap-1 text-[hsl(var(--primary))] font-semibold">
-                {price.toLocaleString()} kr <ArrowRight className="w-4 h-4" />
-              </span>
-            </button>
+            <LoppButton price={price} showHotel={true} showPlane={true} />
           )}
         </div>
       </div>
