@@ -72,7 +72,7 @@ export default function ClientRaceDetailPage({
   )
 
   return (
-    <section className="py-10 container">
+    <section className="py-10">
       <h1 className="text-3xl font-bold text-white mb-4">{race.title}</h1>
 
       {/* Datum och plats */}

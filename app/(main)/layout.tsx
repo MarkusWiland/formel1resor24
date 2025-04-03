@@ -29,7 +29,7 @@ export default function MainLayout({
 }>) {
   return (
     <div className="container mx-auto">
-      <main className="">
+      <main className="py-6">
         <div>
           <DynamicBreadcrumb />
         </div>

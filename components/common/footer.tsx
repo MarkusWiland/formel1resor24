@@ -12,12 +12,13 @@ export default function Footer() {
         {/* Om oss */}
         <div>
           <h4 className="text-xl font-semibold text-white mb-4">
-            Om Hockeybiljetter
+            Om Formel1resor24
           </h4>
           <p className="text-sm text-white leading-relaxed">
-            Hockeybiljetter.se hjälper dig att jämföra priser på biljetter till
-            SHL, NHL, CHL och landskamper – allt från seriösa återförsäljare och
-            resebyråer.
+            Formel1resor24 hjälper dig att jämföra biljetter och paketresor till
+            alla stora F1-lopp världen över – från pålitliga återförsäljare och
+            resebyråer. Vi gör det enkelt att hitta det bästa alternativet för
+            din drömresa till Formel 1.
           </p>
         </div>
 
@@ -27,9 +28,9 @@ export default function Footer() {
           <ul className="space-y-2 text-sm">
             {[
               { href: '/', label: 'Hem' },
-              { href: '/lag', label: 'Lag' },
-              { href: '/ligor', label: 'Ligor' },
-              { href: '/resebyraer', label: 'Resebyråer' },
+              { href: '/lopp', label: 'Lopp' },
+              { href: '/kalender', label: 'Kalender' },
+              { href: '/stader', label: 'Städer' },
               { href: '/om', label: 'Om sajten' },
             ].map((link) => (
               <li key={link.href}>

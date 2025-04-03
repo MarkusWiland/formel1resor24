@@ -24,7 +24,7 @@ export default function PopularCities() {
           <Link
             key={city.slug}
             href={`/lopp/${city.slug}`}
-            className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium bg-card border border-[hsl(var(--border))] rounded-full hover:bg-muted transition"
+            className="inline-flex items-center gap-2 px-4 text-white py-2 text-sm font-medium bg-card border border-[hsl(var(--border))] rounded-full hover:bg-muted transition"
           >
             <span>{city.flag}</span>
             <span>{city.name}</span>
