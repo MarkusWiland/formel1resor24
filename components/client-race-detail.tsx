@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { CalendarDays, MapPin } from 'lucide-react'
 import { format } from 'date-fns'
 import { sv } from 'date-fns/locale'
-import LoppResellerCard from './lopp-reseller-card'
+import LoppResellerCard, { LoppResellerCardProps } from './lopp-reseller-card'
 import { Button } from './ui/button'
 
 // Dummy data (ersätt med props eller fetch senare)
