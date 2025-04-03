@@ -2,8 +2,6 @@ import ClientRaceDetailPage from '@/components/client-race-detail'
 import { mockRaces } from '@/lib/mockRace'
 import { notFound } from 'next/navigation'
 import { Metadata } from 'next'
-
-// SEO Metadata
 export async function generateMetadata({
   params,
 }: {
@@ -24,14 +22,14 @@ export async function generateMetadata({
     description: `Jämför biljetter, hotellpaket och flyg till ${race.city} (${race.circuit}). Se aktuella priser och arrangörer inför ${race.title}.`,
   }
 }
-
-// Sidkomponenten
+// Page-komponenten
 export default async function RaceSlugPage({
   params,
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const race = mockRaces.find((r) => r.slug === params.slug)
+  const { slug } = await params
+  const race = mockRaces.find((r) => r.slug === slug)
 
   if (!race) return notFound()
 
