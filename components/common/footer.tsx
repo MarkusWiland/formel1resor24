@@ -73,7 +73,7 @@ export default function Footer() {
 
       {/* Footer bottom */}
       <div className="border-t border-[hsl(var(--border))] text-center text-xs py-4 text-[hsl(var(--muted-foreground))]">
-        © {new Date().getFullYear()} Hockeybiljetter.se – Alla rättigheter
+        © {new Date().getFullYear()} Formel1resor24.se – Alla rättigheter
         förbehållna.
       </div>
     </footer>
