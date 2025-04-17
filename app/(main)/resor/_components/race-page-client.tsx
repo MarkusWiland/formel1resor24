@@ -2,10 +2,10 @@
 
 import { useState, useMemo } from 'react'
 import { mockRaces } from '@/lib/mockRace'
-import LoppList from './lopp-list'
-import { RaceFilter } from '../../resor/_components/race-filter'
+import { RaceFilter } from './race-filter'
+import RaceList from './racelist'
 
-export default function LoppPageClient() {
+export default function RacePageClient() {
   const [selectedMonth, setSelectedMonth] = useState('Alla')
   const [selectedContinent, setSelectedContinent] = useState('Alla')
 
@@ -20,9 +20,9 @@ export default function LoppPageClient() {
   }, [selectedMonth, selectedContinent])
 
   return (
-    <section className="container mx-auto py-10">
+    <section className="py-10 container mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-[hsl(var(--foreground))]">
-        Välj ett Formel 1-lopp och jämför priser
+        Utforska Formel 1-resor världen över
       </h1>
 
       <RaceFilter
@@ -32,7 +32,7 @@ export default function LoppPageClient() {
         setSelectedContinent={setSelectedContinent}
       />
 
-      <LoppList filteredRaces={filteredRaces} />
+      <RaceList races={filteredRaces} />
     </section>
   )
 }

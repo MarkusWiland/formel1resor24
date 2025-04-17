@@ -19,6 +19,7 @@ const months = [
   'Oktober',
   'November',
 ]
+
 const continents = [
   'Alla',
   'Europa',

@@ -44,7 +44,7 @@ export default function DynamicBreadcrumb() {
   })
 
   return (
-    <Breadcrumb>
+    <Breadcrumb className="absolute top-3 left-0 container mx-auto z-20">
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink

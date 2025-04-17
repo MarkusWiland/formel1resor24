@@ -28,9 +28,9 @@ export default function MainLayout({
   children: React.ReactNode
 }>) {
   return (
-    <div className="container mx-auto">
-      <main className="py-6">
-        <div>
+    <div>
+      <main>
+        <div className="relative container mx-auto">
           <DynamicBreadcrumb />
         </div>
         {children}

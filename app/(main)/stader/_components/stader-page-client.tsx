@@ -15,7 +15,7 @@ export default function StaderPageClient() {
   )
 
   return (
-    <section className="py-10 container">
+    <section className="py-10 ">
       <h1 className="text-3xl font-bold mb-6 text-[hsl(var(--foreground))]">
         Utforska alla F1-städer
       </h1>

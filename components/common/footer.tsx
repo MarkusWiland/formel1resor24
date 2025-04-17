@@ -30,7 +30,7 @@ export default function Footer() {
               { href: '/', label: 'Hem' },
               { href: '/lopp', label: 'Lopp' },
               { href: '/kalender', label: 'Kalender' },
-              { href: '/stader', label: 'Städer' },
+              { href: '/destinationer', label: 'Destinationer' },
               { href: '/om', label: 'Om sajten' },
             ].map((link) => (
               <li key={link.href}>
