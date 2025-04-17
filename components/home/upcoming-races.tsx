@@ -39,7 +39,7 @@ export default function UpcomingRaces() {
           return (
             <Link
               key={race.slug}
-              href={`/lopp/${race.slug}`}
+              href={`/resor/${race.slug}`}
               className="group bg-card border border-[hsl(var(--border))] rounded-xl p-5 hover:shadow-md transition"
             >
               <div className="flex items-center gap-2 mb-2 text-sm text-muted-foreground">

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
-import LoppPageClient from './_components/lopp-page-client'
 import MiniHero from '@/components/common/mini-hero'
 import SEOText from '@/components/common/seo'
+import ResorPageClient from './_components/resor-page-client'
 
 export const metadata: Metadata = {
   title: 'Alla Formel 1-lopp 2025 – Biljetter & resor | Formel1resor24',
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   ],
 }
 
-export default function LoppPage() {
+export default function ResorPage() {
   return (
     <>
       <MiniHero
@@ -28,7 +28,7 @@ export default function LoppPage() {
         imageUrl="/images/f1bg.jpg"
       />
 
-      <LoppPageClient />
+      <ResorPageClient />
       <SEOText
         title="Hitta rätt Formel 1-resa för 2025"
         paragraphs={[

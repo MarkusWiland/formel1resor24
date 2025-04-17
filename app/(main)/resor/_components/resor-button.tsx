@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { ArrowRight, Hotel, Plane, Ticket } from 'lucide-react'
 
-export function LoppButton({
+export function ResorButton({
   price,
   showHotel,
   showPlane,

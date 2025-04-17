@@ -18,7 +18,7 @@ export default function MiniRaceCard({
 }: MiniTripCardProps) {
   return (
     <Link
-      href={`/lopp/${slug}`}
+      href={`/resor/${slug}`}
       className="block bg-[hsl(var(--card))] border border-border rounded-lg px-4 py-3 shadow-sm hover:shadow-md transition text-left group"
     >
       <h3 className="text-sm font-semibold text-[hsl(var(--foreground))] group-hover:underline leading-snug">

@@ -23,7 +23,7 @@ export default function PopularCities() {
         {cities.map((city) => (
           <Link
             key={city.slug}
-            href={`/lopp/${city.slug}`}
+            href={`/resor/${city.slug}`}
             className="inline-flex items-center gap-2 px-4 text-white py-2 text-sm font-medium bg-card border border-[hsl(var(--border))] rounded-full hover:bg-muted transition"
           >
             <span>{city.flag}</span>

@@ -4,7 +4,7 @@ import { format } from 'date-fns'
 import { sv } from 'date-fns/locale'
 import { ArrowRight, MapPin } from 'lucide-react'
 
-type LoppCardProps = {
+type ResorCardProps = {
   city: string
   title: string
   date: string
@@ -12,13 +12,13 @@ type LoppCardProps = {
   priceTicketOnly: number
 }
 
-export default function LoppCard({
+export default function ResorCard({
   city,
   title,
   date,
   circuit,
   priceTicketOnly,
-}: LoppCardProps) {
+}: ResorCardProps) {
   const dateObj = new Date(date)
   const day = format(dateObj, 'dd', { locale: sv })
   const month = format(dateObj, 'MMM', { locale: sv })

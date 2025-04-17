@@ -6,7 +6,7 @@ import { MapPin } from 'lucide-react'
 export default function DestinationCard({ race }: { race: any }) {
   return (
     <Link
-      href={`/lopp/${race.slug}`}
+      href={`/resor/${race.slug}`}
       className="block border rounded-xl overflow-hidden shadow hover:shadow-lg transition bg-card"
     >
       <div className="aspect-video overflow-hidden">

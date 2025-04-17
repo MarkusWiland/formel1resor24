@@ -48,7 +48,7 @@ export default function HeroSection() {
               <Button
                 key={race.city}
                 onClick={() => {
-                  router.push(`/lopp/${race.city.toLowerCase()}`)
+                  router.push(`/resor/${race.city.toLowerCase()}`)
                   setSearch('')
                 }}
                 className="w-full text-left px-5 py-3 text-foreground hover:bg-muted transition-colors"
