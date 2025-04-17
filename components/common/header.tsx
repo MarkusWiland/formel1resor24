@@ -5,7 +5,7 @@ import Link from 'next/link'
 export default function Header() {
   const navLinks = [
     { href: '/', label: 'Hem' },
-    { href: '/lopp', label: 'Resor' }, // Alla resor, med filter
+    { href: '/resor', label: 'Resor' }, // Alla resor, med filter
     { href: '/kalender', label: 'Kalender' }, // Visar per månad/datum
     { href: '/destinationer', label: 'Destinationer' }, // Städer & länder
   ]
