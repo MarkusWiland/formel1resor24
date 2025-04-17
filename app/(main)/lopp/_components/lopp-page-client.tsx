@@ -3,7 +3,7 @@
 import { useState, useMemo } from 'react'
 import { mockRaces } from '@/lib/mockRace'
 import LoppList from './lopp-list'
-import { RaceFilter } from '../../resor/_components/race-filter'
+import RaceFilter from '@/components/common/race-filter'
 
 export default function LoppPageClient() {
   const [selectedMonth, setSelectedMonth] = useState('Alla')
