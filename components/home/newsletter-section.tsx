@@ -1,33 +1,34 @@
 'use client'
 
-import { Send } from 'lucide-react'
-import { Input } from '@/components/ui/input'
-import { Button } from '@/components/ui/button'
+import { MailCheck } from 'lucide-react'
 
 export default function NewsletterSection() {
   return (
-    <section className="py-20 bg-[hsl(var(--primary))]/5">
-      <div className="container text-center">
-        <h2 className="text-3xl font-bold text-[hsl(var(--foreground))] mb-4">
-          Missa inte nästa Grand Prix-erbjudande!
-        </h2>
-        <p className="text-muted-foreground max-w-xl mx-auto mb-6">
-          Få exklusiva deals, restips och nyheter om kommande F1-lopp direkt i
-          din inkorg – först av alla.
+    <section className="w-full bg-[hsl(var(--hero-background))] py-16 px-6 text-center">
+      <div className="max-w-2xl mx-auto">
+        <div className="flex justify-center items-center gap-2 mb-4">
+          <MailCheck className="w-6 h-6 text-[hsl(var(--primary))]" />
+          <h2 className="text-2xl font-bold text-[hsl(var(--foreground))]">
+            Få våra bästa trädgårdstips i mejlen
+          </h2>
+        </div>
+        <p className="text-[hsl(var(--muted-foreground))] mb-6 text-sm">
+          Anmäl dig till vårt nyhetsbrev och håll dig uppdaterad med guider,
+          topplistor och tester.
         </p>
 
-        <form
-          onSubmit={(e) => e.preventDefault()}
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-xl mx-auto"
-        >
-          <Input
+        <form className="flex flex-col sm:flex-row justify-center items-center gap-4">
+          <input
             type="email"
             placeholder="Din e-postadress"
-            className="w-full sm:flex-1 bg-white/80 backdrop-blur border border-input"
+            className="px-4 py-2 rounded-xl border border-[hsl(var(--border))] bg-white text-sm w-full max-w-xs text-[hsl(var(--foreground))] placeholder:text-[hsl(var(--muted-foreground))]"
           />
-          <Button type="submit" className="gap-2">
-            Prenumerera <Send className="w-4 h-4" />
-          </Button>
+          <button
+            type="submit"
+            className="bg-[hsl(var(--primary))] hover:bg-green-700 text-white font-medium px-6 py-2 rounded-xl text-sm transition"
+          >
+            Prenumerera
+          </button>
         </form>
       </div>
     </section>

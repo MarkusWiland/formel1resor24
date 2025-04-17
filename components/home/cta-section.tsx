@@ -1,25 +1,28 @@
 'use client'
 
-import { ArrowRight } from 'lucide-react'
-import Link from 'next/link'
+import { Leaf, CheckCircle } from 'lucide-react'
 
 export default function CTASection() {
   return (
-    <section className="py-20 bg-[hsl(var(--primary))] text-white">
-      <div className="container text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-          Redo att boka din F1-resa?
-        </h2>
-        <p className="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Jämför biljetter, hotell och paket till världens mest ikoniska Grand
-          Prix – från svenska arrangörer du kan lita på.
+    <section className="w-full bg-[hsl(var(--primary))] text-white py-16 px-6 text-center">
+      <div className="max-w-2xl mx-auto">
+        <div className="flex justify-center items-center gap-2 mb-4">
+          <Leaf className="w-6 h-6 text-white" />
+          <h2 className="text-3xl font-bold">
+            Redo att hitta rätt trädgårdsprodukt?
+          </h2>
+        </div>
+        <p className="text-base mb-6 text-white/90">
+          <CheckCircle className="inline-block w-4 h-4 mr-1 text-white/80" />
+          Vi hjälper dig att spara tid, pengar och göra smartare val för ditt
+          utomhusliv.
         </p>
-        <Link
-          href="/kalender"
-          className="inline-flex items-center gap-2 px-6 py-3 bg-white text-[hsl(var(--primary))] font-semibold rounded-md shadow hover:bg-white/90 transition"
+        <a
+          href="#topplista"
+          className="inline-block bg-white text-[hsl(var(--primary))] font-semibold py-3 px-6 rounded-xl hover:bg-[hsl(var(--accent))] hover:text-[hsl(var(--accent-foreground))] transition text-sm"
         >
-          Utforska F1-kalendern <ArrowRight className="w-4 h-4" />
-        </Link>
+          Utforska topplistan
+        </a>
       </div>
     </section>
   )

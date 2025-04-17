@@ -1,74 +1,65 @@
+// components/sections/HeroSection.tsx – med MiniHero + ShadCN + Microcopy-knappar
 'use client'
 
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { Input } from '@/components/ui/input'
-import { Search } from 'lucide-react'
-import { mockRaces } from '@/lib/mockRace'
-import { Button } from '../ui/button'
-import MiniHero from '../common/mini-hero'
+import MiniHero from '@/components/common/mini-hero'
+import { Badge } from '@/components/ui/badge'
+import { Button } from '@/components/ui/button'
 
 export default function HeroSection() {
-  const [search, setSearch] = useState('')
-  const router = useRouter()
-
-  const filteredRaces =
-    search.length > 0
-      ? mockRaces.filter(
-          (race) =>
-            race.title.toLowerCase().includes(search.toLowerCase()) ||
-            race.city.toLowerCase().includes(search.toLowerCase()) ||
-            race.circuit.toLowerCase().includes(search.toLowerCase()),
-        )
-      : []
-
   return (
-    <MiniHero
-      title="Upplev Formel 1 live!"
-      subtitle="Formel1biljetter.se jämför biljetter, hotell och paket till världens
-          största Grand Prix–resor. Full gas – noll stress."
-      imageUrl="/hero-bg.jpg"
-    >
-      {/* Search input */}
-      <div className="mt-6 relative max-w-xl mx-auto px-4">
-        <div className="relative">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-white/70 z-10 w-5 h-5" />
-          <Input
-            type="text"
-            placeholder="Sök efter stad, bana eller land..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="pl-11 pr-4 py-4 rounded-xl bg-white/90 border border-input text-foreground placeholder-muted-foreground shadow-md backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-[hsl(var(--primary))] focus:border-[hsl(var(--primary))] transition w-full"
-          />
+    <div className="w-full">
+      {/* MiniHero bakgrundsbild-sektion */}
+      <MiniHero
+        title="Bästa trädgårdsprodukterna 2025"
+        subtitle="Jämför testade robotgräsklippare, bevattningssystem och mer."
+        imageUrl="/images/hero-garden.jpg"
+      >
+        <div className="flex justify-center flex-wrap gap-3">
+          <Button
+            variant="secondary"
+            size="lg"
+            className="text-base font-semibold"
+          >
+            ✅ Se testvinnaren (mest prisvärd)
+          </Button>
+          <Button
+            variant="outline"
+            size="lg"
+            className="text-base font-semibold"
+          >
+            🔍 Läs hela testet
+          </Button>
+          <Button
+            variant="default"
+            size="lg"
+            className="text-base font-semibold"
+          >
+            ➡ Till återförsäljare
+          </Button>
         </div>
+      </MiniHero>
 
-        {filteredRaces.length > 0 && (
-          <div className="absolute z-30 mt-2 w-full rounded-xl border border-border max-h-64 bg-card shadow-xl overflow-y-auto animate-in fade-in slide-in-from-top-2">
-            {filteredRaces.map((race) => (
-              <Button
-                key={race.city}
-                onClick={() => {
-                  router.push(`/resor/${race.city.toLowerCase()}`)
-                  setSearch('')
-                }}
-                className="w-full text-left px-5 py-3 text-foreground hover:bg-muted transition-colors"
-              >
-                {race.title}
-              </Button>
-            ))}
-          </div>
-        )}
-      </div>
-
-      <div className="mt-8">
-        <Button
-          size="lg"
-          className="bg-[hsl(var(--primary))] hover:bg-[hsl(var(--primary)/1.1)] px-6 py-3 text-white font-semibold text-lg rounded-xl shadow"
-          onClick={() => router.push('/kalender')}
+      {/* Trust badges under MiniHero */}
+      <div className="container py-6 flex flex-wrap justify-center gap-3">
+        <Badge
+          variant="outline"
+          className="bg-green-100 text-green-900 border-green-300"
         >
-          Utforska F1-kalendern 2025 →
-        </Button>
+          ✅ Oberoende tester
+        </Badge>
+        <Badge
+          variant="outline"
+          className="bg-green-100 text-green-900 border-green-300"
+        >
+          ✅ Uppdaterat 2025
+        </Badge>
+        <Badge
+          variant="outline"
+          className="bg-green-100 text-green-900 border-green-300"
+        >
+          ✅ Gratis att använda
+        </Badge>
       </div>
-    </MiniHero>
+    </div>
   )
 }

@@ -1,159 +1,98 @@
 @import "tailwindcss";
-
 @import "tw-animate-css";
 
+/* Custom variant för dark mode om du vill använda */
 @custom_variant dark (&:is(.dark *));
 
+/* Font + färgvariabler */
 @theme {
-  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
   --color-hero-background: hsl(var(--hero-background));
   --color-card: hsl(var(--card));
   --color-card-foreground: hsl(var(--card-foreground));
-  --color-text-primary: hsl(var(--text-primary));
-  --color-popover: hsl(var(--popover));
-  --color-popover-foreground: hsl(var(--popover-foreground));
-
   --color-primary: hsl(var(--primary));
   --color-primary-foreground: hsl(var(--primary-foreground));
-
-  --color-secondary: hsl(var(--secondary));
-  --color-secondary-foreground: hsl(var(--secondary-foreground));
-
-  --color-muted: hsl(var(--muted));
-  --color-muted-foreground: hsl(var(--muted-foreground));
-
+  --color-border: hsl(var(--border));
   --color-accent: hsl(var(--accent));
   --color-accent-foreground: hsl(var(--accent-foreground));
-
-  --color-destructive: hsl(var(--destructive));
-  --color-destructive-foreground: hsl(var(--destructive-foreground));
-
-  --color-border: hsl(var(--border));
-  --color-input: hsl(var(--input));
-  --color-ring: hsl(var(--ring));
-
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
-
   --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
 }
 
-@layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop {
-    border-color: var(--color-gray-200, currentColor);
-  }
-
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentColor);
-  }
-}
-
-@layer utilities {
-  body {
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .card-3d {
-    @apply transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.01];
-  }
-}
-
+/* === Light mode === */
 :root {
-  /* === Base === */
-  --background: 0 0% 6%; /* Nästan svart bakgrund */
-  --foreground: 0 0% 100%; /* Vit text */
+  --background: 60 20% 98%; /* Ljusbeige bakgrund */
+  --foreground: 160 20% 15%; /* Mörkgrön text */
+  --hero-background: 120 24% 92%; /* Ljusgrön sektion */
+  --card: 0 0% 100%; /* Vit kortbakgrund */
+  --card-foreground: 160 20% 15%; /* Mörk text */
 
-  /* === Surfaces === */
-  --hero-background: 0 0% 10%; /* Kolsvart hero */
-  --card: 0 0% 12%; /* Mörkt grå kortbakgrund */
-  --card-foreground: 0 0% 100%; /* Vit text på kort */
+  --primary: 142 45% 35%; /* Skogsgrön */
+  --primary-foreground: 0 0% 100%; /* Vit text på knappar */
 
-  --popover: 0 0% 14%;
-  --popover-foreground: 0 0% 95%;
+  --accent: 90 30% 60%; /* Mjuk gul/grön accent */
+  --accent-foreground: 160 20% 15%;
 
-  /* === Primary CTA (Pris, knappar, ikoner) === */
-  --primary: 0 100% 50%; /* Klar racingröd */
-  --primary-foreground: 0 0% 100%; /* Vit text på röd */
+  --border: 140 18% 80%; /* Grön-grå linjer */
 
-  /* === Secondary (grå badge, neutrala ytor) === */
-  --secondary: 0 0% 20%;
-  --secondary-foreground: 0 0% 95%;
+  --muted: 0 0% 90%;
+  --muted-foreground: 160 10% 40%;
 
-  /* === Accent (för vinnarkänsla) === */
-  --accent: 45 100% 51%; /* Guld (kan bytas mot silver) */
-  --accent-foreground: 0 0% 10%;
-
-  /* === Muted (metadata, hjälptext etc.) === */
-  --muted: 0 0% 25%;
-  --muted-foreground: 0 0% 60%;
-
-  /* === Border / Inputs === */
-  --border: 0 0% 30%;
-  --input: 0 0% 30%;
-  --ring: 0 100% 50%; /* Samma som primary */
-
-  /* === Status colors === */
-  --destructive: 0 80% 60%;
-  --destructive-foreground: 0 0% 100%;
-
-  --success: 140 60% 40%; /* Grön för "klar" */
-  --success-foreground: 140 100% 98%;
-
-  --warning: 40 100% 50%;
-  --warning-foreground: 40 100% 15%;
-
-  /* === Radii === */
   --radius: 0.75rem;
 }
 
+/* === Base styles === */
 @layer base {
   * {
     @apply border-border;
   }
 
   h1 {
-    @apply text-4xl md:text-6xl xl:text-7xl font-bold;
+    @apply text-4xl md:text-5xl font-bold text-green-900;
   }
 
   h2 {
-    @apply text-2xl lg:text-3xl font-medium;
+    @apply text-2xl md:text-3xl font-semibold text-green-800;
   }
 
   h3 {
-    @apply text-2xl lg:text-4xl font-medium;
+    @apply text-xl font-medium text-green-700;
+  }
+
+  body {
+    @apply font-sans bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
   }
 
   a {
-    @apply hover:cursor-pointer;
+    @apply hover:cursor-pointer transition-colors;
   }
 
   button {
-    @apply hover:cursor-pointer bg-rose-600 hover:bg-rose-700;
-  }
-}
-@utility container {
-  margin-inline: auto;
-  padding-inline: 2rem;
-
-  @media (width >= --theme(--breakpoint-sm)) {
-    max-width: none;
+    @apply bg-[hsl(var(--primary))] text-white hover:bg-green-700 transition rounded-lg px-4 py-2;
   }
 
-  @media (width >= 1400px) {
-    max-width: 1200px;
+  input,
+  textarea {
+    @apply border border-[hsl(var(--border))] rounded-lg px-3 py-2 bg-white text-[hsl(var(--foreground))];
   }
 }
+
+/* === Utilities === */
+@layer utilities {
+  .card-3d {
+    @apply transition-all duration-300 transform hover:-translate-y-1 hover:scale-[1.01];
+  }
+
+  .container {
+    margin-inline: auto;
+    padding-inline: 1rem;
+    max-width: 1280px;
+  }
+}
+
+/* === Animation (valfri) === */
 @keyframes gradient-x {
   0%,
   100% {

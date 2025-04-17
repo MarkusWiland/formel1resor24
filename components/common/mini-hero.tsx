@@ -30,31 +30,17 @@ export default function MiniHero({
         src={imageUrl}
         alt={title}
         fill
-        className="object-cover object-center brightness-[0.75]"
+        className="object-cover object-center brightness-[0.7]"
         priority
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0  bg-gradient-to-br from-[hsl(var(--hero-background))]/70 via-black/50 to-[hsl(var(--background))]/30 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-br from-green-900/60 via-black/40 to-green-100/20 z-0" />
 
       {/* Innehåll */}
       <div className="relative z-10 container mx-auto flex flex-col justify-center items-center text-center px-4">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white drop-shadow-xl mb-4">
-          {title.split(' ').map((word, i) => (
-            <span
-              key={i}
-              className={`inline-block mr-2 ${
-                word.toLowerCase().includes('formel1') ||
-                word.toLowerCase().includes('f1') ||
-                word.toLowerCase().includes('formel') ||
-                word === '1'
-                  ? 'text-red-500'
-                  : ''
-              }`}
-            >
-              {word}
-            </span>
-          ))}
+          {title}
         </h1>
 
         {subtitle && (
