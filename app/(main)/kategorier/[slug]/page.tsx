@@ -28,7 +28,7 @@ export default function CategoriesPage() {
               >
                 <h2 className="text-xl font-semibold mb-2">{category}</h2>
                 <p className="text-sm text-[hsl(var(--muted-foreground))]">
-                  {count} produkter
+                  {count} produktera
                 </p>
               </Link>
             )
